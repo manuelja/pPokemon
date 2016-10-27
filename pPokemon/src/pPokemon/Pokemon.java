@@ -1,3 +1,5 @@
+package pPokemon;
+
 import java.util.List;
 
 /**
@@ -19,6 +21,7 @@ public class Pokemon {
 	
 	private static int nextNumber;
 	private List<Swap> swaps;
+	private List<Competition> competitions;
 	private boolean swapAllow = true;
 
 	static {
@@ -70,4 +73,21 @@ public class Pokemon {
 	public final void setSwapAllow(final boolean swapAllow) {
 		this.swapAllow = swapAllow;
 	}
+	
+	public final void addSwap(Swap pSwap) {
+		this.swaps.add(pSwap);
+	}
+
+	public final List<Swap> getAllSwaps() {
+		return this.swaps;
+	}
+
+	public final void addCompetition(Competition pCompetition) {
+		this.swaps.add(pCompetition);
+	}
+
+	public final List<Competition> getAllCompetitions() {
+		return this.competitions;
+	}
+
 }

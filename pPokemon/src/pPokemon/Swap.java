@@ -1,12 +1,13 @@
+package pPokemon;
 
 public class Swap {
 
-	private String id;
-	private Trainer trainer1;
-	private Trainer trainer2;
-	private Pokemon pokemon1;
-	private Pokemon pokemon2;
-	private java.util.Date date;
+	protected String id;
+	protected Trainer trainer1;
+	protected Trainer trainer2;
+	protected Pokemon pokemon1;
+	protected Pokemon pokemon2;
+	protected java.util.Date date;
 	
 
 	/**
@@ -24,11 +25,11 @@ public class Swap {
 		this.pokemon1 = pokemon1;
 		this.pokemon2 = pokemon2;
 		// TODO Datum pruefen
-		this.date = new java.util.Date();
+		this.setDate(new java.util.Date());
 	}
 	
 	
-	public final void execute() {
+	public void execute() {
 		if (this.trainer1 == this.trainer2) {
 			System.out.println("Nicht getauscht: Trainer identisch!");
 		} else if (this.pokemon1.getType() == this.pokemon2.getType()) {
@@ -53,15 +54,30 @@ public class Swap {
 			this.trainer2.addPokemon(this.pokemon1);
 			System.out.println("Tausch " + this.pokemon1.getName() 
 					+ " gegen " + this.pokemon2.getName() + " erfolgreich!");
+			
+			// TODO funktioniert nicht...
+			//this.pokemon1.addSwap(this);
+			//this.pokemon2.addSwap(this);
 		}
 	}
-	/**
-	 * @param args
-	 */	
-	public static void main(final String[] args) {
-		
 
-		
+	//Copy-constructor
+	public Swap (Swap swap) {
+		this.id = swap.id;
+		this.trainer1 = swap.trainer1;
+		this.trainer2 = swap.trainer2;
+		this.pokemon1 = swap.pokemon1;
+		this.pokemon2 = swap.pokemon2;
+		this.date = swap.getDate();
+	}
+
+	public java.util.Date getDate() {
+		return date;
+	}
+
+
+	private void setDate(java.util.Date date) {
+		this.date = date;
 	}
 
 }
