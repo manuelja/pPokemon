@@ -67,10 +67,12 @@ public class PokemonManager {
 			System.out.println(pok.get(i).toString());
 		}
 		
-		Competition comp1 = new Competition("Kampf 1 ", ash, maunzi, bisasam, krabby);
+		Competition comp1 = new Competition("Kampf 1 ", ash, maunzi, 
+				bisasam, krabby);
 		comp1.execute();
 
-		Competition comp2 = new Competition("Kampf 2 ", ash, maunzi, glumanda, arbok);
+		Competition comp2 = new Competition("Kampf 2 ", ash, maunzi, 
+				glumanda, arbok);
 		comp2.execute();
 
 		System.out.println("Ash besitzt diese Pokemons:");

@@ -1,6 +1,6 @@
 package pPokemon;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * @author manuel
@@ -9,19 +9,13 @@ import java.util.List;
 public class Pokemon {
 	
 
-	/**
-	 * The name of the Pokemon, e. g. Pikachu.
-	 */
 	private String name;
-	/**
-	 * This is the type of the pokemon in the enum Type.
-	 */
 	private Type type;
 	private int number;
 	
 	private static int nextNumber;
-	private List<Swap> swaps;
-	private List<Competition> competitions;
+	private ArrayList<Swap> swaps;
+	private ArrayList<Competition> competitions;
 	private boolean swapAllow = true;
 
 	static {
@@ -35,6 +29,8 @@ public class Pokemon {
 		this.type = pType;
 		this.number = nextNumber;
 		nextNumber++;
+		this.swaps = new ArrayList<Swap>();
+		this.competitions = new ArrayList<Competition>();		
 	}
 
 	public final String toString() {
@@ -60,33 +56,28 @@ public class Pokemon {
 	public final void setType(final Type pType) {
 		this.type = pType;
 	}
-	/**
-	 * @return the swapAllow
-	 */
+
 	public final boolean isSwapAllow() {
 		return swapAllow;
 	}
 
-	/**
-	 * @param swapAllow the swapAllow to set
-	 */
 	public final void setSwapAllow(final boolean swapAllow) {
 		this.swapAllow = swapAllow;
 	}
 	
-	public final void addSwap(Swap pSwap) {
+	public final void addSwap(final Swap pSwap) {
 		this.swaps.add(pSwap);
 	}
 
-	public final List<Swap> getAllSwaps() {
+	public final ArrayList<Swap> getAllSwaps() {
 		return this.swaps;
 	}
 
-	public final void addCompetition(Competition pCompetition) {
+	public final void addCompetition(final Competition pCompetition) {
 		this.swaps.add(pCompetition);
 	}
 
-	public final List<Competition> getAllCompetitions() {
+	public final ArrayList<Competition> getAllCompetitions() {
 		return this.competitions;
 	}
 

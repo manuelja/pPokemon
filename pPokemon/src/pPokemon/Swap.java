@@ -10,13 +10,6 @@ public class Swap {
 	protected java.util.Date date;
 	
 
-	/**
-	 * @param id
-	 * @param trainer1
-	 * @param trainer2
-	 * @param pokemon1
-	 * @param pokemon2
-	 */
 	public Swap(final String id, final Trainer trainer1, final Trainer trainer2,
 			final Pokemon pokemon1, final Pokemon pokemon2) {
 		this.id = id;
@@ -24,7 +17,6 @@ public class Swap {
 		this.trainer2 = trainer2;
 		this.pokemon1 = pokemon1;
 		this.pokemon2 = pokemon2;
-		// TODO Datum pruefen
 		this.setDate(new java.util.Date());
 	}
 	
@@ -56,13 +48,13 @@ public class Swap {
 					+ " gegen " + this.pokemon2.getName() + " erfolgreich!");
 			
 			// TODO funktioniert nicht...
-			//this.pokemon1.addSwap(this);
-			//this.pokemon2.addSwap(this);
+			this.pokemon1.addSwap(this);
+			this.pokemon2.addSwap(this);
 		}
 	}
 
 	//Copy-constructor
-	public Swap (Swap swap) {
+	public Swap(final Swap swap) {
 		this.id = swap.id;
 		this.trainer1 = swap.trainer1;
 		this.trainer2 = swap.trainer2;
@@ -71,12 +63,12 @@ public class Swap {
 		this.date = swap.getDate();
 	}
 
-	public java.util.Date getDate() {
+	public final java.util.Date getDate() {
 		return date;
 	}
 
 
-	private void setDate(java.util.Date date) {
+	private void setDate(final java.util.Date date) {
 		this.date = date;
 	}
 
